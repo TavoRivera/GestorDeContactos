@@ -37,3 +37,4 @@ c:\users\onrivera\documents\visual studio 2015\Projects\GestordeContactos2\Gesto
 c:\users\onrivera\documents\visual studio 2015\Projects\GestordeContactos2\GestordeContactos2\bin\Debug\stdole.dll
 c:\users\onrivera\documents\visual studio 2015\Projects\GestordeContactos2\GestordeContactos2\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 c:\users\onrivera\documents\visual studio 2015\Projects\GestordeContactos2\GestordeContactos2\obj\Debug\GestordeContactos2.FormReporte.resources
+C:\Users\onrivera\Documents\Visual Studio 2015\Projects\GestordeContactos2\GestordeContactos2\obj\Debug\GestordeContactos2.vbprojResolveAssemblyReference.cache

@@ -23,6 +23,8 @@ Partial Class FormReporte
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.txtFiltro = New System.Windows.Forms.TextBox()
+        Me.btnFiltrar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -36,17 +38,39 @@ Partial Class FormReporte
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(700, 479)
         Me.CrystalReportViewer1.TabIndex = 0
         '
+        'txtFiltro
+        '
+        Me.txtFiltro.Location = New System.Drawing.Point(12, 66)
+        Me.txtFiltro.Name = "txtFiltro"
+        Me.txtFiltro.Size = New System.Drawing.Size(174, 22)
+        Me.txtFiltro.TabIndex = 1
+        Me.txtFiltro.Text = "Filtrar Nombre"
+        '
+        'btnFiltrar
+        '
+        Me.btnFiltrar.Location = New System.Drawing.Point(22, 94)
+        Me.btnFiltrar.Name = "btnFiltrar"
+        Me.btnFiltrar.Size = New System.Drawing.Size(146, 28)
+        Me.btnFiltrar.TabIndex = 2
+        Me.btnFiltrar.Text = "Filtrar"
+        Me.btnFiltrar.UseVisualStyleBackColor = True
+        '
         'FormReporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 479)
+        Me.Controls.Add(Me.btnFiltrar)
+        Me.Controls.Add(Me.txtFiltro)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "FormReporte"
         Me.Text = "FormReporte"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents txtFiltro As TextBox
+    Friend WithEvents btnFiltrar As Button
 End Class
