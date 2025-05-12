@@ -1,25 +1,47 @@
 ﻿Imports System.Data.SQLite
 Imports System.IO
+Imports GestordeContactos2.My.Resources
 
 Public Class Main
+    Public Property RolUsuario As String
+
     Private Sub CargarContactos()
         Dim dt As New DataTable()
+        dgvContactos.DataSource = Nothing ' <- Esto evita el error
 
         Using con As SQLiteConnection = Conexion.ObtenerConexion()
-            Dim query As String = "SELECT * FROM contactos"
-            Dim cmd As New SQLiteCommand(query, con)
-            Dim da As New SQLiteDataAdapter(cmd)
-            da.Fill(dt)
+            Using cmd As New SQLiteCommand("SELECT * FROM contactos", con)
+                Using reader As SQLiteDataReader = cmd.ExecuteReader()
+                    dt.Load(reader)
+                End Using
+            End Using
         End Using
 
         dgvContactos.DataSource = dt
     End Sub
 
+
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' DatabaseHelper.CrearBaseDeDatos()
+        'DatabaseHelper.CrearBaseDeDatos()
         CargarContactos()
+        MessageBox.Show(RolUsuario)
 
 
+        btnReporte.Image = Informacion.reporte.ToBitmap()
+        btnReporte.ImageAlign = ContentAlignment.MiddleLeft ' (opcional)
+        btnReporte.TextAlign = ContentAlignment.MiddleRight ' (opcional)
+        btnReporte.Image = New Bitmap(Informacion.reporte.ToBitmap(), New Size(24, 24)) ' ajusta tamaño
+
+
+
+        ' Restricciones por rol
+        If RolUsuario = "lector" Then
+            btnAgregar.Enabled = False
+            btnEditar.Enabled = False
+            btnEliminar.Enabled = False
+            btnUsuarios.Visible = False ' Este botón sería el que abre el formulario de usuarios
+        End If
 
     End Sub
 
@@ -101,7 +123,5 @@ Public Class Main
         reporte.ShowDialog()
     End Sub
 
-    Private Sub dgvContactos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvContactos.CellContentClick
 
-    End Sub
 End Class

@@ -128,23 +128,28 @@
       <DependentUpon>Contactos.xsd</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHelper.vb" />
-    <Compile Include="FormReporte.Designer.vb">
+    <Compile Include="Inicio\FormReporte.Designer.vb">
       <DependentUpon>FormReporte.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormReporte.vb">
+    <Compile Include="Inicio\FormReporte.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.vb">
+    <Compile Include="Informacion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Informacion.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\Main.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.vb">
+    <Compile Include="Inicio\Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestorForm.Designer.vb">
+    <Compile Include="Inicio\GestorForm.Designer.vb">
       <DependentUpon>GestorForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="GestorForm.vb">
+    <Compile Include="Inicio\GestorForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -168,15 +173,32 @@
       <DependentUpon>ReporteContactos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Usuario\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Registro.Designer.vb">
+      <DependentUpon>Registro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Registro.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormReporte.resx">
+    <EmbeddedResource Include="Inicio\FormReporte.resx">
       <DependentUpon>FormReporte.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="Informacion.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Informacion.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestorForm.resx">
+    <EmbeddedResource Include="Inicio\GestorForm.resx">
       <DependentUpon>GestorForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -188,6 +210,12 @@
     <EmbeddedResource Include="ReporteContactos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteContactos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Registro.resx">
+      <DependentUpon>Registro.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +256,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_ico_format_type_icon_134725.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

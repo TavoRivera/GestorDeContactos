@@ -30,26 +30,30 @@ Public Class GestorForm
             MessageBox.Show("El nombre es obligatorio.")
             Return
         End If
+        Try
+            Using con As SQLiteConnection = Conexion.ObtenerConexion()
+                Using cmd As SQLiteCommand = con.CreateCommand()
+                    If ContactoId = 0 Then
+                        ' INSERT
+                        cmd.CommandText = "INSERT INTO contactos (nombre, telefono, correo, direccion) VALUES (@nombre, @telefono, @correo, @direccion)"
+                    Else
+                        ' UPDATE
+                        cmd.CommandText = "UPDATE contactos SET nombre = @nombre, telefono = @telefono, correo = @correo, direccion = @direccion WHERE id = @id"
+                        cmd.Parameters.AddWithValue("@id", ContactoId)
+                    End If
 
-        Using con As SQLiteConnection = Conexion.ObtenerConexion()
-            Dim cmd As SQLiteCommand
+                    cmd.Parameters.AddWithValue("@nombre", txtNombre.Text)
+                    cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text)
+                    cmd.Parameters.AddWithValue("@correo", txtCorreo.Text)
+                    cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text)
 
-            If ContactoId = 0 Then
-                ' INSERT
-                cmd = New SQLiteCommand("INSERT INTO contactos (nombre, telefono, correo, direccion) VALUES (@nombre, @telefono, @correo, @direccion)", con)
-            Else
-                ' UPDATE
-                cmd = New SQLiteCommand("UPDATE contactos SET nombre = @nombre, telefono = @telefono, correo = @correo, direccion = @direccion WHERE id = @id", con)
-                cmd.Parameters.AddWithValue("@id", ContactoId)
-            End If
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
 
-            cmd.Parameters.AddWithValue("@nombre", txtNombre.Text)
-            cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text)
-            cmd.Parameters.AddWithValue("@correo", txtCorreo.Text)
-            cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text)
-
-            cmd.ExecuteNonQuery()
-        End Using
 
         Me.DialogResult = DialogResult.OK
         Me.Close()

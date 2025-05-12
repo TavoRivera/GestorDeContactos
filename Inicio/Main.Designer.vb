@@ -26,11 +26,12 @@ Partial Class Main
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dgvContactos = New System.Windows.Forms.DataGridView()
         Me.btnReporte = New System.Windows.Forms.Button()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnUsuarios = New System.Windows.Forms.Button()
         CType(Me.dgvContactos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAgregar
@@ -60,16 +61,6 @@ Partial Class Main
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(979, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(204, 140)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
-        '
         'dgvContactos
         '
         Me.dgvContactos.AllowUserToAddRows = False
@@ -84,18 +75,37 @@ Partial Class Main
         '
         'btnReporte
         '
-        Me.btnReporte.Location = New System.Drawing.Point(499, 51)
+        Me.btnReporte.Location = New System.Drawing.Point(500, 51)
         Me.btnReporte.Name = "btnReporte"
-        Me.btnReporte.Size = New System.Drawing.Size(105, 44)
+        Me.btnReporte.Size = New System.Drawing.Size(45, 44)
         Me.btnReporte.TabIndex = 5
-        Me.btnReporte.Text = "Generar Reporte"
         Me.btnReporte.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(979, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(204, 140)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
+        '
+        'btnUsuarios
+        '
+        Me.btnUsuarios.Location = New System.Drawing.Point(580, 51)
+        Me.btnUsuarios.Name = "btnUsuarios"
+        Me.btnUsuarios.Size = New System.Drawing.Size(108, 44)
+        Me.btnUsuarios.TabIndex = 6
+        Me.btnUsuarios.Text = "Usuarios"
+        Me.btnUsuarios.UseVisualStyleBackColor = True
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1254, 526)
+        Me.Controls.Add(Me.btnUsuarios)
         Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.dgvContactos)
         Me.Controls.Add(Me.PictureBox1)
@@ -104,8 +114,8 @@ Partial Class Main
         Me.Controls.Add(Me.btnAgregar)
         Me.Name = "Main"
         Me.Text = "Gestor de Contactos"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvContactos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -116,4 +126,5 @@ Partial Class Main
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents dgvContactos As DataGridView
     Friend WithEvents btnReporte As Button
+    Friend WithEvents btnUsuarios As Button
 End Class
