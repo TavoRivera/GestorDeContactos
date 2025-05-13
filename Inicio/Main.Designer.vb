@@ -30,6 +30,7 @@ Partial Class Main
         Me.btnReporte = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnUsuarios = New System.Windows.Forms.Button()
+        Me.btnCerrarSesion = New System.Windows.Forms.Button()
         CType(Me.dgvContactos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -100,11 +101,21 @@ Partial Class Main
         Me.btnUsuarios.Text = "Usuarios"
         Me.btnUsuarios.UseVisualStyleBackColor = True
         '
+        'btnCerrarSesion
+        '
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(858, 51)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(95, 44)
+        Me.btnCerrarSesion.TabIndex = 7
+        Me.btnCerrarSesion.Text = "Cerrar Sesion"
+        Me.btnCerrarSesion.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1254, 526)
+        Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.btnUsuarios)
         Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.dgvContactos)
@@ -127,4 +138,5 @@ Partial Class Main
     Friend WithEvents dgvContactos As DataGridView
     Friend WithEvents btnReporte As Button
     Friend WithEvents btnUsuarios As Button
+    Friend WithEvents btnCerrarSesion As Button
 End Class

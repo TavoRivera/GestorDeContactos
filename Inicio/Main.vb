@@ -25,7 +25,6 @@ Public Class Main
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'DatabaseHelper.CrearBaseDeDatos()
         CargarContactos()
-        MessageBox.Show(RolUsuario)
 
 
         btnReporte.Image = Informacion.reporte.ToBitmap()
@@ -93,6 +92,10 @@ Public Class Main
 
 
     Private Sub dgvContactos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvContactos.CellDoubleClick
+        If RolUsuario.ToLower() = "lector" Then
+            MessageBox.Show("No tienes permiso para acceder al gestor.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
         ' Verifica que la fila clickeada no sea el encabezado o una fila nueva
         If e.RowIndex >= 0 Then
             Dim fila As DataGridViewRow = dgvContactos.Rows(e.RowIndex)
@@ -123,5 +126,29 @@ Public Class Main
         reporte.ShowDialog()
     End Sub
 
+    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+        If RolUsuario.ToLower() = "administrador" Then
+            Dim frmUsuarios As New Usuarios()
+            frmUsuarios.ShowDialog()
+        Else
+            MessageBox.Show("No tienes permiso para acceder a esta función.")
+        End If
+    End Sub
+
+    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        Dim resultado As DialogResult = MessageBox.Show("¿Estás seguro de que deseas cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If resultado = DialogResult.Yes Then
+            ' Mostrar el formulario de login nuevamente
+            Dim frmLogin As New Login()
+            frmLogin.Show()
+
+            ' Cerrar el formulario principal actual
+            Me.Close()
+        End If
+    End Sub
+    Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Application.Exit()
+    End Sub
 
 End Class

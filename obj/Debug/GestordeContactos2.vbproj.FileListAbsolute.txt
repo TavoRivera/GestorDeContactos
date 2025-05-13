@@ -40,4 +40,5 @@ C:\Users\onrivera\Documents\Visual Studio 2015\Projects\GestordeContactos2\Gesto
 C:\Users\onrivera\Documents\Visual Studio 2015\Projects\GestordeContactos2\GestordeContactos2\obj\Debug\GestordeContactos2.pdb
 C:\Users\onrivera\Documents\Visual Studio 2015\Projects\GestordeContactos2\GestordeContactos2\obj\Debug\GestordeContactos2.Login.resources
 C:\Users\onrivera\Documents\Visual Studio 2015\Projects\GestordeContactos2\GestordeContactos2\obj\Debug\GestordeContactos2.Registro.resources
-C:\Users\onrivera\Documents\Visual Studio 2015\Projects\GestordeContactos2\GestordeContactos2\obj\Debug\GestordeContactos2.vbprojResolveAssemblyReference.cache
+C:\Users\onrivera\documents\visual studio 2015\Projects\GestordeContactos2\GestordeContactos2\obj\Debug\GestordeContactos2.Usuarios.resources
+C:\Users\onrivera\documents\visual studio 2015\Projects\GestordeContactos2\GestordeContactos2\obj\Debug\GestordeContactos2.vbprojResolveAssemblyReference.cache
